@@ -20,9 +20,13 @@ def relu(z: NDArray[np.floating]) -> NDArray[np.floating]:
     array-like
         Activated values
     """
-    # TODO: Implement ReLU
-    pass
+    output = z*0
 
+    for i in range(len(z)):
+        if z[i]>0:
+            output[i] = z[i]
+
+    return output
 
 def relu_derivative(z: NDArray[np.floating]) -> NDArray[np.floating]:
     """
@@ -38,8 +42,13 @@ def relu_derivative(z: NDArray[np.floating]) -> NDArray[np.floating]:
     array-like
         Gradient values
     """
-    # TODO: Implement ReLU derivative
-    pass
+    output = z*0
+
+    for i in range(len(z)):
+        if z[i]>0:
+            output[i] = 1
+
+    return output
 
 
 def tanh(z: NDArray[np.floating]) -> NDArray[np.floating]:
